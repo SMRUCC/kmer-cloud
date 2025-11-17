@@ -17,5 +17,7 @@ let extract_TSS_upstream = function(gbfile, len) {
 }
 
 for(let gb_asm in tqdm(list.files(genbank_repo, pattern = "*.gbff"))) {
-    gb_asm |> extract_TSS_upstream(len = 150);
+    try({
+        gb_asm |> extract_TSS_upstream(len = 150);
+    });
 }
