@@ -1,0 +1,1 @@
+run script file "src\02_kmer_samples.R" to generates these k-mer matrix data.
