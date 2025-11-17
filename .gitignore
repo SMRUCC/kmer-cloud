@@ -238,3 +238,4 @@ _Pvt_Extensions
 *.fasta
 
 data/kmer_matrix/*.csv
+data/box_matrix.csv
