@@ -11,7 +11,7 @@ print(basename(load_kmers));
 load_kmers = as.list(load_kmers, names = basename(load_kmers)) 
 |> tqdm 
 |> sapply(file -> load.expr(file))
-|> geneExpression::joinFeatures()
+|> geneExpression::joinFeatures(strict=FALSE)
 ;
 
 write.expr_matrix(load_kmers, 
