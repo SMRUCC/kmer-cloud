@@ -10,7 +10,7 @@ print(basename(load_kmers));
 
 load_kmers = as.list(load_kmers, names = basename(load_kmers)) 
 |> tqdm 
-|> sapply(file -> load.expr(file) |> geneExpression::filter("two-component system"))
+|> sapply(file -> load.expr(file) |> geneExpression::filter(instr="two-component system"))
 |> geneExpression::joinFeatures(strict=FALSE)
 ;
 
