@@ -1,7 +1,7 @@
 let cloud_points = ?"--matrix" || stop("umap embedding data matrix must be provided!");
 let saveRplot = ?"--save" || file.path(dirname(cloud_points), `${basename(cloud_points)}.png`);
 let cloud_data = read.csv(cloud_points, row.names = 1, check.names = FALSE);
-let tags = rownames(cloud_data) |> sapply(str -> .Internal::first(strsplit(str, " ",fixed =TRUE)));
+let tags = rownames(cloud_data) |> sapply(str -> .Internal::first(strsplit(str, "|",fixed =TRUE)[3]));
 
 cloud_data[,"species"] = tags;
 
